@@ -1,0 +1,29 @@
+
+OVERVIEW: digital security ensures that all of your communication is properly encrypted so no third party can read it, modify it, or dispute the sender.
+
+USAGE: digitalSecurity [options]
+
+OPTIONS:
+    -i                                     	-interactive mode, renders GUI 
+    -aes    key_length block_length output_file	-uses AES to generate AES key needed for AES encryption and stores it to folder "keys"
+    -eaes   key input_file encrypted_file   	-uses AES encryption to encrypt input_file into encrypted_file
+    -daes   key encrypted_file output_file  	-uses AES encryption to decrypt encrypted_file into output_file
+    -rsa    key_length output_file              -uses RSA to generate RSA keys needed for RSA encryption and stores them to folder "keys"
+    -ersa   public_key input_file encrypted_file
+                                            	-uses RSA encryption to encrypt input_file into encrypted_file
+    -drsa   secret_key encrypted_file output_file
+                                            	-uses RSA encryption to decrypt encrypted_file into output_file                                    
+    -sha    input_file output_file          	-uses SHA algorithm to calculate hash function of input_file and stores it to folder "keys"
+    -sign   input_file secret_key signature
+                                            	-creates digital signature that ensures authenticity, integrity and Non-repudiation
+    -osign  input_file signature public_key     -checks whether the sender is the person from whom this message has arrived
+    -envp   input_file public_key envelope
+                                            	-creates digital envelope that ensures secrecy
+    -oenvp  envelope private_key output_file    e-opens the envelope and delivers the message
+    -seal   input_file public_key_receiver secret_key_sender envelope seal
+                                            	-creates digital seal that ensures secrecy, authenticity, integrity and Non-repudiation
+    -oseal  seal public_key_sender secret_key_receiver output_file
+                                            	-opens the sealed message and displays the message
+    -rdkey  key_file                            -prints keys
+    -rdclr  clear_file				-shows all clear text files either input ones or decrypted ones that share stated name
+    -edenc  encrypted_file			-shows all encrypted files that share stated name

@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdbool.h>
+#include <unistd.h>
+#include <ctype.h>
+#include <sys/stat.h>
+#include <stdlib.h>
+#include <errno.h>
+#include <math.h>
+#include <openssl/evp.h>
+#include <openssl/rsa.h>
+#include <openssl/pem.h>
+#include <openssl/rand.h>
+#include <openssl/err.h>
+#include <openssl/bn.h>
+#include <openssl/conf.h>
+#include <gtk/gtk.h>
+
+#include "../include/IOHandler.h"
+#include "../include/main.h"
+#include "../include/GUI.h"
+#include "../include/cmd.h"
+#include "../include/errorHandler.h"
+#include "../include/encryption.h"
+#include "../include/converter.h"
+#include "../include/sha256.h"

@@ -1,0 +1,9 @@
+UNIX version with openssl:
+gcc `pkg-config --cflags gtk+-3.0` -lcrypto -o ../digitalSecurity main.c cmd.c errorHandler.c GUI.c encryption.c converter.c IOHandler.c `pkg-config --libs gtk+-3.0`
+
+Debug the program:
+gcc `pkg-config --cflags gtk+-3.0` -lcrypto -g -o ../digitalSecurityDebug main.c cmd.c errorHandler.c GUI.c encryption.c converter.c IOHandler.c sha256.c `pkg-config --libs gtk+-3.0`
+
+Windows version:
+x86_64-w64-mingw32-gcc-6.3.0 `mingw64-pkg-config --cflags gtk+-3.0` -o ../digitalSecurity main.c cmd.c errorHandler.c GUI.c encryption.c sha256.c `mingw64-pkg-config --libs gtk+-3.0`
+

@@ -3,4 +3,4 @@ before_install:
   - sudo apt-get install libgtk-3-dev
 script:
   - cd "src/bin"
-  - gcc -std=c11 `pkg-config --cflags gtk+-3.0` -lcrypto -o ../digitalSecurity main.c cmd.c errorHandler.c GUI.c encryption.c converter.c IOHandler.c `pkg-config --libs gtk+-3.0`
+  - gcc `pkg-config --cflags gtk+-3.0` -lcrypto -o ../digitalSecurity main.c cmd.c errorHandler.c GUI.c encryption.c converter.c IOHandler.c `pkg-config --libs gtk+-3.0`

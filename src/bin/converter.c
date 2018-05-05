@@ -91,7 +91,8 @@ unsigned char* CharToHex(unsigned char *input, int *length)
         return NULL;
     else
     {
-        for(int i = 0; i < tempLength; i++)
+	int i;
+        for(I = 0; i < tempLength; i++)
         {
             if((i*2)%roundoff == 0 && i != 0)
             {
@@ -115,10 +116,12 @@ unsigned char* HexToChar(unsigned char *input, int length)
         return NULL;
     else
     {
-        for (unsigned char *p = StrTok(pointer, '\n'); p != NULL; p = StrTok(NULL, '\n'))
+	unsigned char *p;
+        for (P = StrTok(pointer, '\n'); p != NULL; p = StrTok(NULL, '\n'))
         {
             int len = FieldSize(p);
-            for (unsigned i = 0, uchr; i < len; i+=2)
+	    unsigned i;
+            for (i = 0, uchr; i < len; i+=2)
             {
                 sscanf((char*)(p + i + offset), "%2x", &uchr);
                 buffer[(i + offset)/2] = uchr;
@@ -151,7 +154,8 @@ char* IntToChar(int number, int* length)
     char* buffer = malloc(sizeof(char)*10); // Has to be char
     memset(buffer, 0, 10);
     snprintf(buffer, 10, "%d", number);
-    for(int i = 0; i < 10; i++)
+    int i;
+    for(i = 0; i < 10; i++)
     {
         if(*(buffer + i) == 0)
         {

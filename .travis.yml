@@ -1,4 +1,4 @@
 language: c
 script:
-  - cd "src"
+  - cd "src/bin"
   - gcc `pkg-config --cflags gtk+-3.0` -lcrypto -o ../digitalSecurity main.c cmd.c errorHandler.c GUI.c encryption.c converter.c IOHandler.c `pkg-config --libs gtk+-3.0`

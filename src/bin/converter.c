@@ -92,7 +92,7 @@ unsigned char* CharToHex(unsigned char *input, int *length)
     else
     {
 	int i;
-        for(I = 0; i < tempLength; i++)
+        for(i = 0; i < tempLength; i++)
         {
             if((i*2)%roundoff == 0 && i != 0)
             {
@@ -117,11 +117,11 @@ unsigned char* HexToChar(unsigned char *input, int length)
     else
     {
 	unsigned char *p;
-        for (P = StrTok(pointer, '\n'); p != NULL; p = StrTok(NULL, '\n'))
+        for (p = StrTok(pointer, '\n'); p != NULL; p = StrTok(NULL, '\n'))
         {
             int len = FieldSize(p);
 	    unsigned i;
-            for (i = 0, uchr; i < len; i+=2)
+            for (i = 0; i < len; i+=2)
             {
                 sscanf((char*)(p + i + offset), "%2x", &uchr);
                 buffer[(i + offset)/2] = uchr;

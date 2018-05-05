@@ -120,7 +120,7 @@ unsigned char* HexToChar(unsigned char *input, int length)
         for (p = StrTok(pointer, '\n'); p != NULL; p = StrTok(NULL, '\n'))
         {
             int len = FieldSize(p);
-	    unsigned i;
+	    unsigned i, uchr;
             for (i = 0; i < len; i+=2)
             {
                 sscanf((char*)(p + i + offset), "%2x", &uchr);

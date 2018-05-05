@@ -423,10 +423,12 @@ void AddKeyValuePair(char** buffer, const char* key, unsigned char** values, int
     strcat(*buffer, key);
     strcat(*buffer, "\n");
     strcat(*buffer, valuePadding);
-    for(int i = 0; i < valueSize; i++)
+    int i;
+    for(i = 0; i < valueSize; i++)
     {
         int iter = 0;
-        for (unsigned char *p = StrTok(*(values + i), '\n'); p != NULL; p = StrTok(NULL, '\n'))
+	unsigned char *p;
+        for (p = StrTok(*(values + i), '\n'); p != NULL; p = StrTok(NULL, '\n'))
         {
             if(iter != 0)
             {
@@ -538,8 +540,8 @@ bool ParseFile(enum FileTypes fileType, const char* fileName, char*** keyLengths
     bool commentingAllowed = true;
     int line = 0;
     int numOfElem = 0;
-
-    for (unsigned char *p = StrTok(text, '\n'); p != NULL && !error; p = StrTok(NULL, '\n'))
+    unsigned char *p;
+    for (p = StrTok(text, '\n'); p != NULL && !error; p = StrTok(NULL, '\n'))
     {
         line++;
         tempParseType = ParseLine(p, &output);
@@ -741,7 +743,8 @@ enum ParseTypes ParseLine(unsigned char* line, unsigned char** output)
     }
 
     int inc = 0;
-    for(unsigned char* iterator = line; isspace(*iterator); iterator++)
+    unsigned char* iterator;
+    for(iterator = line; isspace(*iterator); iterator++)
         inc++;
 
     if(inc == lineSize)
